@@ -1,0 +1,29 @@
+<!--
+ * @Description: electron 测试页面
+ * @Author: medicom.JiaXianMeng
+ * @Date: 2024-08-26 16:52:04
+ * @LastEditors: medicom.JiaXianMeng
+ * @LastEditTime: 2024-09-06 10:51:32
+ * @FilePath: \electron-demo\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+	<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+	<title>我的electron</title>
+</head>
+
+<body>
+	<h1>我的第一个electron项目</h1>
+	We are using Node.js <span id="node-version"></span>,
+	Chromium <span id="chrome-version"></span>,
+	and Electron <span id="electron-version"></span>.
+	<p id="info"></p>
+	<button id="btn">点击111</button>
+	<script src="./renderer.js"></script>
+</body>
+
+</html>

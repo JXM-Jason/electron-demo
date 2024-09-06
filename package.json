@@ -1,0 +1,15 @@
+{
+  "name": "electron-demo",
+  "version": "1.0.0",
+  "description": "my first electron demo",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jiaxianmeng",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^32.0.2"
+  }
+}
