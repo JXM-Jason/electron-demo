@@ -3,13 +3,13 @@
  * @Author: medicom.JiaXianMeng
  * @Date: 2024-08-26 16:52:51
  * @LastEditors: medicom.JiaXianMeng
- * @LastEditTime: 2024-09-06 15:34:14
+ * @LastEditTime: 2024-09-06 16:36:27
  * @FilePath: \electron-demo\main.js
  */
-const { app, BrowserWindow, ipcMain, Menu, Tray, nativeImage } = require('electron')
+const { app, BrowserWindow, ipcMain, Menu, Tray, nativeImage, dialog } = require('electron')
 const { autoUpdater } = require('electron-updater')
 const path = require('node:path')
-const registerAppMenu = require('./menus');
+const registerAppMenu = require('./menus.js');
 const isMac = process.platform === 'darwin'
 let tray = null
 let WIN = null
@@ -17,14 +17,8 @@ let timer = null
 let count = 0
 let icon = nativeImage.createFromPath('./build/icons/24x24.png')
 
-// Object.defineProperty(app, 'isPackaged', {
-// 	get () {
-// 		console.log('isPackaged---__dirname--', __dirname);
-// 		autoUpdater.updateConfigPath = path.join(__dirname, 'dist','latest.yml');
-// 		console.log('autoUpdater.updateConfigPath---',autoUpdater.updateConfigPath);
-// 		return true;
-// 	}
-// })
+// autoUpdater.forceDevUpdateConfig = true//开启开发环境调试
+
 
 
 const createWindow = () => {
@@ -129,7 +123,7 @@ function checkUpdate () {
 
 	//监听'update-available'事件，发现有新版本时触发
 	autoUpdater.on('update-available', () => {
-		console.log('现有新版本')
+		console.log('发现有新版本')
 	})
 
 	//默认会自动下载新版本，如果不想自动下载，设置autoUpdater.autoDownload = false
@@ -143,7 +137,7 @@ function checkUpdate () {
 		}).then((buttonIndex) => {
 			if (buttonIndex.response == 0) {  //选择是，则退出程序，安装新版本
 				autoUpdater.quitAndInstall()
-				app.quit()
+				// app.quit()
 			}
 		})
 	})

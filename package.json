@@ -1,6 +1,6 @@
 {
   "name": "electron-demo",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "my first electron demo",
   "main": "main.js",
   "scripts": {
